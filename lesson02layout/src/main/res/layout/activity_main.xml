@@ -7,12 +7,57 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/mainActivityTitleTextView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/main_activity_top_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/mainActivityButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_activity_button_land_title"
+        android:background="@drawable/ic_launcher_background"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/main_activity_top_margin"
+        app:layout_constraintTop_toBottomOf="@id/mainActivityTitleTextView"
+        tools:visibility="visible"
+        tools:text ="GGGGGGGGG"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="@dimen/main_activity_top_margin"
+        android:layout_marginEnd="@dimen/main_activity_top_margin"
+        tools:layout_editor_absoluteX="280dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ToggleButton"
+        tools:layout_editor_absoluteX="303dp"
+        tools:layout_editor_absoluteY="164dp" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Switch"
+        tools:layout_editor_absoluteX="312dp"
+        tools:layout_editor_absoluteY="256dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
