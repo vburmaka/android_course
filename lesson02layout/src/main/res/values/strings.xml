@@ -2,5 +2,13 @@
     <string name="app_name">lesson02layout</string>
     <string name="main_activity_title_land">Hello World, horizontal!</string>
     <string name="main_activity_button_land_title">Hello Button</string>
+    <string name="ac_button_title">AC</string>
+    <string name="sign_button_title">+/-</string>
+    <string name="percent_button_title">%</string>
+    <string name="divide_button_title">\u00F7</string>
+    <string name="seven_button_title">7</string>
+    <string name="eight_button_title">8</string>
+    <string name="nine_button_title">9</string>
+    <string name="mult_button_title">*</string>
 
 </resources>

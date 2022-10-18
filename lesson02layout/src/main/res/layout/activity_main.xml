@@ -6,58 +6,113 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/mainActivityTitleTextView"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/mainEditText"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="@dimen/main_activity_top_margin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="@dimen/calc_general_margin"
+        android:gravity="right"
+        android:textSize="@dimen/calc_main_text_size"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="00000" />
 
     <Button
-        android:id="@+id/mainActivityButton"
+        android:id="@+id/acButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/main_activity_button_land_title"
-        android:background="@drawable/ic_launcher_background"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="@dimen/main_activity_top_margin"
-        app:layout_constraintTop_toBottomOf="@id/mainActivityTitleTextView"
-        tools:visibility="visible"
-        tools:text ="GGGGGGGGG"
-        />
+        android:layout_margin="@dimen/calc_buttons_margin"
+        style="@style/FunButtonStyle"
+        android:text="@string/ac_button_title"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/mainEditText" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+    <Button
+        android:id="@+id/signButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="@dimen/main_activity_top_margin"
-        android:layout_marginEnd="@dimen/main_activity_top_margin"
-        tools:layout_editor_absoluteX="280dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_margin="@dimen/calc_buttons_margin"
+        style="@style/FunButtonStyle"
+        android:text="@string/sign_button_title"
+        app:layout_constraintStart_toEndOf="@+id/acButton"
+        app:layout_constraintTop_toBottomOf="@id/mainEditText" />
 
-    <ToggleButton
-        android:id="@+id/toggleButton"
+    <Button
+        android:id="@+id/percentButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ToggleButton"
-        tools:layout_editor_absoluteX="303dp"
-        tools:layout_editor_absoluteY="164dp" />
+        android:layout_margin="@dimen/calc_buttons_margin"
+        style="@style/FunButtonStyle"
+        android:text="@string/percent_button_title"
+        app:layout_constraintStart_toEndOf="@+id/signButton"
+        app:layout_constraintTop_toBottomOf="@id/mainEditText" />
 
-    <Switch
-        android:id="@+id/switch1"
+    <Button
+        android:id="@+id/divideButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/calc_buttons_margin"
+        android:text="@string/divide_button_title"
+        style="@style/OperationButtonStyle"
+        app:layout_constraintStart_toEndOf="@+id/percentButton"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintTop_toBottomOf="@id/mainEditText" />
+
+    <Button
+        android:id="@+id/sevenButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Switch"
-        tools:layout_editor_absoluteX="312dp"
-        tools:layout_editor_absoluteY="256dp" />
+        android:layout_margin="@dimen/calc_buttons_margin"
+        style="@style/FunButtonStyle"
+        android:text="@string/seven_button_title"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/acButton" />
+
+    <Button
+        android:id="@+id/eightButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/calc_buttons_margin"
+        style="@style/FunButtonStyle"
+        android:text="@string/eight_button_title"
+        app:layout_constraintStart_toEndOf="@+id/acButton"
+        app:layout_constraintTop_toBottomOf="@id/acButton" />
+
+    <Button
+        android:id="@+id/nineButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/calc_buttons_margin"
+        style="@style/FunButtonStyle"
+        android:text="@string/nine_button_title"
+        app:layout_constraintStart_toEndOf="@+id/signButton"
+        app:layout_constraintTop_toBottomOf="@id/acButton" />
+
+    <Button
+        android:id="@+id/multButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/calc_buttons_margin"
+        android:text="@string/mult_button_title"
+        style="@style/OperationButtonStyle"
+        app:layout_constraintStart_toEndOf="@+id/percentButton"
+        app:layout_constraintTop_toBottomOf="@id/acButton" />
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/calc_general_margin" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/calc_general_margin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

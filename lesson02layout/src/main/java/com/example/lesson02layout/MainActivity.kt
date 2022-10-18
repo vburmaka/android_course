@@ -12,13 +12,5 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val titleTextView = findViewById<TextView>(R.id.mainActivityTitleTextView)
-        val button = findViewById<Button>(R.id.mainActivityButton)
-
-        button.setOnClickListener(object : OnClickListener{
-            override fun onClick(p0: View?) {
-                titleTextView.text = button.text
-            }
-        })
     }
 }

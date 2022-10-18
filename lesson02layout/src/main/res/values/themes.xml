@@ -13,4 +13,12 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="FunButtonStyle" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="backgroundTint">@color/black01</item>
+    </style>
+
+    <style name="OperationButtonStyle" parent="FunButtonStyle">
+        <item name="backgroundTint">@color/purple_200</item>
+    </style>
 </resources>
