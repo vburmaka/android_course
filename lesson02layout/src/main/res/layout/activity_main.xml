@@ -10,95 +10,96 @@
         android:id="@+id/mainEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/calc_general_margin"
         android:gravity="right"
         android:textSize="@dimen/calc_main_text_size"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
         app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTop"
         tools:text="00000" />
 
     <Button
         android:id="@+id/acButton"
-        android:layout_width="wrap_content"
+        style="@style/FunButtonStyle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/calc_buttons_margin"
-        style="@style/FunButtonStyle"
         android:text="@string/ac_button_title"
+        app:layout_constraintEnd_toStartOf="@+id/signButton"
         app:layout_constraintStart_toStartOf="@+id/guidelineStart"
         app:layout_constraintTop_toBottomOf="@id/mainEditText" />
 
     <Button
         android:id="@+id/signButton"
-        android:layout_width="wrap_content"
+        style="@style/FunButtonStyle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/calc_buttons_margin"
-        style="@style/FunButtonStyle"
         android:text="@string/sign_button_title"
+        app:layout_constraintEnd_toStartOf="@+id/percentButton"
         app:layout_constraintStart_toEndOf="@+id/acButton"
         app:layout_constraintTop_toBottomOf="@id/mainEditText" />
 
     <Button
         android:id="@+id/percentButton"
-        android:layout_width="wrap_content"
+        style="@style/FunButtonStyle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/calc_buttons_margin"
-        style="@style/FunButtonStyle"
         android:text="@string/percent_button_title"
+        app:layout_constraintEnd_toStartOf="@+id/divideButton"
         app:layout_constraintStart_toEndOf="@+id/signButton"
         app:layout_constraintTop_toBottomOf="@id/mainEditText" />
 
     <Button
         android:id="@+id/divideButton"
+        style="@style/OperationButtonStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/calc_buttons_margin"
         android:text="@string/divide_button_title"
-        style="@style/OperationButtonStyle"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
         app:layout_constraintStart_toEndOf="@+id/percentButton"
-        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
         app:layout_constraintTop_toBottomOf="@id/mainEditText" />
 
     <Button
         android:id="@+id/sevenButton"
+        style="@style/FunButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/calc_buttons_margin"
-        style="@style/FunButtonStyle"
         android:text="@string/seven_button_title"
         app:layout_constraintStart_toStartOf="@+id/guidelineStart"
         app:layout_constraintTop_toBottomOf="@id/acButton" />
 
     <Button
         android:id="@+id/eightButton"
+        style="@style/FunButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/calc_buttons_margin"
-        style="@style/FunButtonStyle"
         android:text="@string/eight_button_title"
         app:layout_constraintStart_toEndOf="@+id/acButton"
         app:layout_constraintTop_toBottomOf="@id/acButton" />
 
     <Button
         android:id="@+id/nineButton"
+        style="@style/FunButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/calc_buttons_margin"
-        style="@style/FunButtonStyle"
         android:text="@string/nine_button_title"
         app:layout_constraintStart_toEndOf="@+id/signButton"
         app:layout_constraintTop_toBottomOf="@id/acButton" />
 
     <Button
         android:id="@+id/multButton"
+        style="@style/OperationButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/calc_buttons_margin"
         android:text="@string/mult_button_title"
-        style="@style/OperationButtonStyle"
         app:layout_constraintStart_toEndOf="@+id/percentButton"
         app:layout_constraintTop_toBottomOf="@id/acButton" />
-
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -114,5 +115,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_end="@dimen/calc_general_margin" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="@dimen/calc_general_margin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
