@@ -3,4 +3,5 @@
     <string name="main_activity_button_title">Start new activity</string>
     <string name="activity2_title">Activity2</string>
     <string name="button2_title">Button2</string>
+    <string name="activity2_checkbox_label">Are you agree?</string>
 </resources>
