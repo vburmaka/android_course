@@ -6,7 +6,6 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 
 class MainActivity : AppCompatActivity(), OnClickListener {
 
@@ -14,6 +13,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
     private var sevenButton: Button? = null
     private var eightButton: Button? = null
     private var nineButton: Button? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         sevenButton?.setOnClickListener(this)
         eightButton?.setOnClickListener(this)
         nineButton?.setOnClickListener(this)
-
     }
 
     override fun onClick(view: View) {

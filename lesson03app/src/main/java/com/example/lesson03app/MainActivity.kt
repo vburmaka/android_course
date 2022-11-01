@@ -9,6 +9,7 @@ import android.view.View.OnClickListener
 import android.widget.Button
 import android.widget.Switch
 import android.widget.TextView
+import androidx.core.view.isVisible
 
 const val QUESTION_KEY = "QUESTION_KEY"
 const val ANSWER_KEY = "ANSWER_KEY"
@@ -41,7 +42,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
 
 
     override fun onClick(view: View?) {
-        when(view?.id){
+        when (view?.id) {
             R.id.nextActivityButton -> startActivity2()
             R.id.button2 -> nextActivityButton?.isEnabled = true
             R.id.switch1 -> {

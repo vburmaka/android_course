@@ -16,3 +16,4 @@ rootProject.name = "course"
 include ':app'
 include ':lesson02layout'
 include ':lesson03app'
+include ':lesson05fragment'
