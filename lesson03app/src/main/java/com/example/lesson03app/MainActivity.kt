@@ -1,5 +1,6 @@
 package com.example.lesson03app
 
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
 
     override fun onClick(view: View?) {
         when (view?.id) {
-            R.id.nextActivityButton -> startActivity2()
+            R.id.nextActivityButton -> startActionSendActivity() //startActivity2()
             R.id.button2 -> nextActivityButton?.isEnabled = true
             R.id.switch1 -> {
                 button2?.isEnabled = !isButton2Enabled
@@ -52,6 +53,18 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         }
     }
 
+    private fun startActionSendActivity(){
+        val sendIntent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, "textMessage")
+            type = "text/plain"
+        }
+        try {
+            startActivity(sendIntent)
+        } catch (e: ActivityNotFoundException) {
+            // Define what your app should do if no activity can handle the intent.
+        }
+    }
     private fun startActivity2(){
         val intent = Intent(
             this,
