@@ -1,11 +1,13 @@
 package com.example.lesson05fragment
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.findNavController
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -14,6 +16,13 @@ class FirstFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: Int? = null
+
+    var interactionListener: FirstFragmentInteractionListener? = null
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        interactionListener = context as FirstFragmentInteractionListener
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,24 +36,32 @@ class FirstFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        val secondFragment =
-            requireActivity().supportFragmentManager.findFragmentByTag(SECOND_FRAGMENT_TAG)
-                ?: SecondFragment.newInstance()
-
         val view = inflater.inflate(R.layout.fragment_first, container, false)
         view.findViewById<TextView>(R.id.firstFragmentHelloTextview).apply {
             text = text.toString() + ", param1 = $param1" + ", param2 = $param2"
             setOnClickListener {
-                requireActivity().supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.main_container, secondFragment, SECOND_FRAGMENT_TAG)
-                    .addToBackStack(null)
-                    .commit()
+                navigateByActionFtoS()
             }
         }
 
         return view
+    }
+
+    private fun navigateByActionFtoS() {
+        interactionListener?.navigateToFeature2(name = "Custom name", id = 222)
+    }
+
+
+    private fun launchSecondFragmentOldSchool(secondFragment: Fragment) {
+//        val secondFragment =
+//            requireActivity().supportFragmentManager.findFragmentByTag(SECOND_FRAGMENT_TAG)
+//                ?: SecondFragment.newInstance()
+//
+//        requireActivity().supportFragmentManager
+//            .beginTransaction()
+//            .replace(R.id.main_container, secondFragment, SECOND_FRAGMENT_TAG)
+//            .addToBackStack(null)
+//            .commit()
     }
 
     companion object {
@@ -56,5 +73,9 @@ class FirstFragment : Fragment() {
                     putInt(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    interface FirstFragmentInteractionListener {
+        fun navigateToFeature2(name: String, id: Int)
     }
 }
