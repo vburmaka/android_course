@@ -10,10 +10,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.lesson08lists.placeholder.PlaceholderContent
 
 /**
- * A fragment representing a list of Items.
+ * The RecyclerView using example
+ * Docs: https://developer.android.com/develop/ui/views/layout/recyclerview
+ *
+ * Other examples
+ * https://guides.codepath.com/android/using-the-recyclerview
+ * https://droidbyme.medium.com/android-recyclerview-with-multiple-view-type-multiple-view-holder-af798458763b
  */
 class ExampleListFragment : Fragment(), MyItemRecyclerViewAdapter.AdapterOnItemClickListener {
 
@@ -41,6 +47,7 @@ class ExampleListFragment : Fragment(), MyItemRecyclerViewAdapter.AdapterOnItemC
                     else -> GridLayoutManager(context, columnCount)
                 }
                 adapter = MyItemRecyclerViewAdapter(PlaceholderContent.ITEMS, this@ExampleListFragment)
+                addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
             }
         }
         return view
@@ -63,6 +70,7 @@ class ExampleListFragment : Fragment(), MyItemRecyclerViewAdapter.AdapterOnItemC
     }
 
     override fun onItemClicked(id: String, details: String) {
+        Log.e(TAG, "onItemClicked: id = $id, details = $details")
         Toast.makeText(activity, "Clicked $id, $details", Toast.LENGTH_LONG).show()
     }
 }

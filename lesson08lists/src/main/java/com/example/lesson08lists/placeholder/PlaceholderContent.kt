@@ -26,8 +26,16 @@ object PlaceholderContent {
 
     init {
         // Add some sample items.
-        for (i in 1..COUNT) {
-            addItem(createPlaceholderItem(i))
+        for (i in 0..COUNT) {
+            if (i == 0) {
+                addItem(createCheckBoxItem(i))
+            } else if (i == 1){
+                addItem(createRemoveItem(i))
+            } else if (i == 2){
+                addItem(createAddItem(i))
+            } else {
+                addItem(createPlaceholderItem(i))
+            }
         }
     }
 
@@ -37,9 +45,20 @@ object PlaceholderContent {
     }
 
     private fun createPlaceholderItem(position: Int): PlaceholderItem {
-        return PlaceholderItem(position.toString(), "Item " + position, makeDetails(position))
+        return SimpleItem(position.toString(), "Item " + position, makeDetails(position))
     }
 
+    private fun createCheckBoxItem(position: Int): PlaceholderItem {
+        return CheckBoxItem(position.toString(), "Item " + position, makeDetails(position))
+    }
+
+    private fun createRemoveItem(position: Int): PlaceholderItem {
+        return RemoveItem(position.toString(), "Item " + position, makeDetails(position))
+    }
+
+    private fun createAddItem(position: Int): PlaceholderItem {
+        return AddItem(position.toString(), "Item " + position, makeDetails(position))
+    }
     private fun makeDetails(position: Int): String {
         val builder = StringBuilder()
         builder.append("Details about Item: ").append(position)
@@ -52,7 +71,15 @@ object PlaceholderContent {
     /**
      * A placeholder item representing a piece of content.
      */
-    data class PlaceholderItem(val id: String, val content: String, val details: String) {
+    open class PlaceholderItem(open val id: String, open val content: String, open val details: String) {
         override fun toString(): String = content
     }
+
+     class SimpleItem(override val id: String, override val content: String, override val details: String): PlaceholderItem(id, content, details)
+     class CheckBoxItem(override val id: String, override val content: String, override val details: String): PlaceholderItem(id, content, details)
+     class RemoveItem(override val id: String, override val content: String, override val details: String): PlaceholderItem(id, content, details)
+     class AddItem(override val id: String, override val content: String, override val details: String): PlaceholderItem(id, content, details)
+
+
+
 }
