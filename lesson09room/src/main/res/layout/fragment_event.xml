@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.event.EventFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:text="@string/event_title_label" />
+
+    <EditText
+        android:id="@+id/eventTitleEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:hint="@string/event_title_hint"/>
+
+    <Button
+        android:id="@+id/eventDateButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/date_button_title"/>
+
+    <Button
+        android:id="@+id/saveEventButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/save_ivent_button_label"/>
+
+    <Button
+        android:id="@+id/shareEventButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/share_event_button_label"/>
+
+</LinearLayout>
