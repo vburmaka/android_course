@@ -21,6 +21,7 @@
             <option value="$PROJECT_DIR$/lesson12camera" />
             <option value="$PROJECT_DIR$/lesson13retrofit" />
             <option value="$PROJECT_DIR$/lesson14map" />
+            <option value="$PROJECT_DIR$/lesson15service" />
           </set>
         </option>
       </GradleProjectSettings>
