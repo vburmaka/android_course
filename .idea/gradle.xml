@@ -22,6 +22,7 @@
             <option value="$PROJECT_DIR$/lesson13retrofit" />
             <option value="$PROJECT_DIR$/lesson14map" />
             <option value="$PROJECT_DIR$/lesson15service" />
+            <option value="$PROJECT_DIR$/lesson15workmanager" />
           </set>
         </option>
       </GradleProjectSettings>
